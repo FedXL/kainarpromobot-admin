@@ -17,3 +17,5 @@ This project represents an admin panel and backend for a Telegram bot designed f
 - **Регистрация участников**: Продавцы и покупатели могут регистрироваться в системе.
 - **Алгоритмы розыгрыша**: Логика проведения розыгрышей денежных призов.
 - **Выгрузка данных**: Экспорт данных участников и результатов розыгрыша в формат Excel.
+
+[![wakatime](https://wakatime.com/badge/user/748cfc4b-3e23-4da0-a310-c0b6ff87825c/project/bc3da7af-d848-41a2-8f13-9edde43093fe.svg)](https://wakatime.com/badge/user/748cfc4b-3e23-4da0-a310-c0b6ff87825c/project/bc3da7af-d848-41a2-8f13-9edde43093fe)

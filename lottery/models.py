@@ -68,7 +68,7 @@ class LotteryClients(models.Model):
 
 class LotterySellers(models.Model):
     name = models.CharField(max_length=255, verbose_name='Розыгрыш', unique=True)
-    little_prize = models.IntegerField(verbose_name='Количество призов 25000')
+    little_prize = models.IntegerField(verbose_name='Количество призов 25000', default=1)
     report = models.TextField(verbose_name='Отчет о розыгрыше', null=True, blank=True)
     start_date = models.DateField(verbose_name='Дата отсечки. Для приоритета новых продавцов', null=True, blank=True)
     super_prize = models.IntegerField(verbose_name='Розыгрыш 1000000', default=None, null=True, blank=True)

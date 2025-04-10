@@ -204,11 +204,14 @@ def sellers_lottery_start(lottey_id: int):
     if lottery.super_prize:
         count_of_winners = 1
         sellers = list(
-            Seller.objects.filter(lottery_winner=None)
+            Seller.objects
             .annotate(num_batteries=Count('battery'))
             .filter(num_batteries__gt=4)
             .prefetch_related('battery')
         )
+        text = f"Колличество продавцов для приза 1000000: {len(sellers)}"
+        lottery.report = text
+        lottery.save()
         winner = random.choice(list(sellers))
         winner.lottery_winner = lottery
         winner.present_type = '1000000'

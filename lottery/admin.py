@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from import_export.admin import ExportMixin
 
+from bot.models import Seller
 from bot.resources import BatteryResourses
 from lottery.models import (Battery, InvalidTry, TelegramMessage, InvoicePhoto
 , MessageTemplate, LotterySellers, LotteryClients)
@@ -99,6 +100,9 @@ def send_templates_to_sellers(modeladmin, request, queryset):
 send_templates_to_sellers.short_description = "Отправить шаблоны победителям (продавцам)"
 
 
+
+
+
 @admin.register(LotteryClients)
 class LotteryClientsAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ('name','little_prize','big_prize','super_prize')
@@ -107,9 +111,10 @@ class LotteryClientsAdmin(ExportMixin, admin.ModelAdmin):
 
 
 
+
 @admin.register(LotterySellers)
 class LotterySellersAdmin(ExportMixin, admin.ModelAdmin):
-    list_display = ('name','little_prize','start_date')
+    list_display = ('name','little_prize','super_prize','start_date')
     actions = [start_seller_lottery, send_templates_to_sellers,]
     resource_class = SellersResourceWin
 
